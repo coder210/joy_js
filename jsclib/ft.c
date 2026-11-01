@@ -1,5 +1,5 @@
 #include "jsclib.h"
-#include <joy/jmath.h>
+#include <src/jmath.h>
 
 static duk_ret_t jft_new(duk_context* ctx)
 {

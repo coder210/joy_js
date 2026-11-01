@@ -1,6 +1,6 @@
 #include <math.h>
 #include "jsclib.h"
-#include <joy/jmath.h>
+#include <src/jmath.h>
 
 static duk_ret_t jfp_from_float(duk_context* ctx)
 { duk_push_number(ctx, (duk_double_t)fp_from_float((float)duk_to_number(ctx,0))); return 1; }

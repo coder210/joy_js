@@ -1,6 +1,6 @@
 #include <SDL3/SDL.h>
 #include "external/duktape/duktape.h"
-#include <joy/joy.h>
+#include <src/joy.h>
 #include "joy_js.h"
 #include "jsclib/jsclib.h"
 

@@ -5,9 +5,9 @@
 # 作为下游工程的可选依赖按需接入；不启用时 joy 核心无需本目录。
 #
 # 使用方需提供（cache 变量）：
-#   JOY_SOURCE_DIR   joy 源码目录（含 joy.h 的目录，即 <repo>/joy/joy）
+#   JOY_SOURCE_DIR   joy 源码目录（含 joy.h 的目录，即 <repo>/joy/src）
 #
-# 说明：jsclib / jsx.c 直接以 <joy/joy.h>、<joy/jmath.h> 包含 joy 核心头，
+# 说明：jsclib / jsx.c 直接以 <src/joy.h>、<src/jmath.h> 包含 joy 核心头，
 # 由下方 include 目录（${JOY_SOURCE_DIR}/.. 即 joy 仓库根）解析；
 # 本仓不再放置任何转发头。
 # ============================================================
@@ -34,14 +34,14 @@ if(NOT TARGET joy_js)
 
     # joy 核心以 submodule 形式位于本仓 joy/ 下；也兼容同级源码树（../joy）
     if(NOT DEFINED JOY_SOURCE_DIR)
-        if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/joy/joy/joy.h")
-            set(_joy_default "${CMAKE_CURRENT_SOURCE_DIR}/joy/joy")
+        if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/joy/src/joy.h")
+            set(_joy_default "${CMAKE_CURRENT_SOURCE_DIR}/joy/src")
         else()
-            set(_joy_default "${CMAKE_CURRENT_SOURCE_DIR}/../joy/joy")
+            set(_joy_default "${CMAKE_CURRENT_SOURCE_DIR}/../joy/src")
         endif()
         set(JOY_SOURCE_DIR "${_joy_default}" CACHE PATH "joy 源码目录（含 joy.h）")
     endif()
-    # 使转发头里的 #include <joy/joy.h> / <joy/jmath.h> 成立
+    # 使转发头里的 #include <src/joy.h> / <src/jmath.h> 成立
     target_include_directories(joy_js PRIVATE "${JOY_SOURCE_DIR}/..")
 
     # joy 为纯源码引用：定义 JOY_STATIC 让 JOY_API 置空

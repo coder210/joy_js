@@ -1,4 +1,4 @@
-#include <joy/joy.h>
+#include <src/joy.h>
 #include "jsclib.h"
 
 static duk_ret_t jfont_create(duk_context* ctx) {

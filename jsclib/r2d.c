@@ -1,4 +1,4 @@
-#include <joy/joy.h>
+#include <src/joy.h>
 #include "jsclib.h"
 
 static jr2d_p check_ren(duk_context* ctx, int idx)

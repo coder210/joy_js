@@ -1,4 +1,4 @@
-#include <joy/joy.h>
+#include <src/joy.h>
 #include "jsclib.h"
 
 static circlef_t read_circlef(duk_context* ctx, int idx) { circlef_t c={{0,0},0}; duk_get_prop_string(ctx,idx,"x"); c.center.x=(fp_t)duk_to_number(ctx,-1); duk_pop(ctx); duk_get_prop_string(ctx,idx,"y"); c.center.y=(fp_t)duk_to_number(ctx,-1); duk_pop(ctx); duk_get_prop_string(ctx,idx,"r"); c.radius=(fp_t)duk_to_number(ctx,-1); duk_pop(ctx); return c; }

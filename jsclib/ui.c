@@ -1,4 +1,4 @@
-#include <joy/joy.h>
+#include <src/joy.h>
 #include "jsclib.h"
 
 static jcolor_t read_color(duk_context* ctx, int idx)

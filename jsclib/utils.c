@@ -1,6 +1,6 @@
 #include <time.h>
 #include <SDL3/SDL.h>
-#include <joy/joy.h>
+#include <src/joy.h>
 #include "jsclib.h"
 
 static duk_ret_t jutils_now(duk_context* ctx)

@@ -7,7 +7,7 @@
  * 从 joy 核心拆出：duktape 引擎 + jsclib 绑定 + jsx 运行时宿主。
  * 只有需要 JS 脚本驱动引擎的工程才链接本模块；joy 核心不依赖它、也不带 duktape。
  *
- * 依赖：joy 公共 API（<joy/joy.h>）、SDL3、msgpack（jsclib 部分用到）。
+ * 依赖：joy 公共 API（<src/joy.h>）、SDL3、msgpack（jsclib 部分用到）。
  */
 
 #include <stdbool.h>

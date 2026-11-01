@@ -5,7 +5,7 @@ joy 引擎的可选 **JavaScript(duktape) 脚本后端**,从 joy 核心拆出的
 ## 定位
 - joy 核心本身**不依赖**本模块、也不携带 duktape。
 - 只有想让 JS 脚本驱动引擎的项目,才把它作为可选依赖接入。
-- 依赖:joy 公共 API(`<joy/joy.h>`)、SDL3、msgpack(jsclib 部分用到)。
+- 依赖:joy 公共 API(`<src/joy.h>`)、SDL3、msgpack(jsclib 部分用到)。
 
 ## 内容
 - `joy_js.h` —— 对外 API(`jsx_*`,承接原 `joy.h` 里的 JS 宿主声明)。
@@ -13,7 +13,7 @@ joy 引擎的可选 **JavaScript(duktape) 脚本后端**,从 joy 核心拆出的
 - `jsclib/` —— JS 绑定层(`jsopen_*`,把 joy 接口暴露给脚本)。
 - `external/duktape/` —— duktape 引擎(amalgamation)。
 
-绑定/宿主源码直接以 `<joy/joy.h>`、`<joy/jmath.h>` 包含 joy 核心头(由 CMake 的 include
+绑定/宿主源码直接以 `<src/joy.h>`、`<src/jmath.h>` 包含 joy 核心头(由 CMake 的 include
 目录解析),本仓不再放置转发头。
 
 ## joy 子模块
@@ -23,7 +23,7 @@ git clone --recursive https://github.com/coder210/joy_js.git
 # 已 clone 过(或想同步最新 joy):
 git submodule update --init --recursive
 ```
-`JOY_SOURCE_DIR` 默认即指向本仓 `joy/joy`(含 `joy.h`),通常无需手动设置。
+`JOY_SOURCE_DIR` 默认即指向本仓 `joy/src`(含 `joy.h`),通常无需手动设置。
 
 ## 接入方式(下游工程)
 ```cmake
