@@ -15,10 +15,18 @@ joy 引擎的可选 **JavaScript(duktape) 脚本后端**,从 joy 核心拆出的
 - `joy.h` / `jmath.h` —— 兼容转发头:让 `jsclib/*.c` 内部的 `"../joy.h"` / `"../jmath.h"`
   无需改动即可解析到 joy 核心;从而保持 jsclib 源码与上游一致。
 
+## joy 子模块
+本仓通过 git submodule 引用 joy 核心,检出于 `joy/`:
+```powershell
+git clone --recursive https://github.com/coder210/joy_js.git
+# 已 clone 过(或想同步最新 joy):
+git submodule update --init --recursive
+```
+`JOY_SOURCE_DIR` 默认即指向本仓 `joy/joy`(含 `joy.h`),通常无需手动设置。
+
 ## 接入方式(下游工程)
 ```cmake
-set(JOY_SOURCE_DIR "${CMAKE_SOURCE_DIR}/third_party/joy/joy")
 add_subdirectory(third_party/joy_js)
 target_link_libraries(<game> PRIVATE joy_js)
 ```
-`joy_js` 会自行链接 SDL3 与 msgpack(若目标存在)。
+`joy_js` 会自行链接 SDL3 与 msgpack(随 joy 子模块提供,若目标存在则链接)。
