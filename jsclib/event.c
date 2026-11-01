@@ -1,4 +1,4 @@
-#include "../joy.h"
+#include <joy/joy.h>
 #include "jsclib.h"
 
 static duk_ret_t jevent_quit(duk_context* ctx)

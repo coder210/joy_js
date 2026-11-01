@@ -12,8 +12,9 @@ joy 引擎的可选 **JavaScript(duktape) 脚本后端**,从 joy 核心拆出的
 - `jsx.c` —— JS 运行时宿主(创建 duktape、加载脚本、事件分发、热重载)。
 - `jsclib/` —— JS 绑定层(`jsopen_*`,把 joy 接口暴露给脚本)。
 - `external/duktape/` —— duktape 引擎(amalgamation)。
-- `joy.h` / `jmath.h` —— 兼容转发头:让 `jsclib/*.c` 内部的 `"../joy.h"` / `"../jmath.h"`
-  无需改动即可解析到 joy 核心;从而保持 jsclib 源码与上游一致。
+
+绑定/宿主源码直接以 `<joy/joy.h>`、`<joy/jmath.h>` 包含 joy 核心头(由 CMake 的 include
+目录解析),本仓不再放置转发头。
 
 ## joy 子模块
 本仓通过 git submodule 引用 joy 核心,检出于 `joy/`:

@@ -1,4 +1,4 @@
-#include "../joy.h"
+#include <joy/joy.h>
 #include "jsclib.h"
 
 /* ===== 全局 Duktape 上下文 + JS 回调存储 ===== */

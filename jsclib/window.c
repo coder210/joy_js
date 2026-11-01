@@ -1,4 +1,4 @@
-#include "../joy.h"
+#include <joy/joy.h>
 #include "jsclib.h"
 
 static duk_ret_t jwindow_create(duk_context* ctx)

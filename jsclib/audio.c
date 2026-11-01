@@ -1,4 +1,4 @@
-#include "../joy.h"
+#include <joy/joy.h>
 #include "jsclib.h"
 
 /* ==================== 辅助：根据扩展名派发 ==================== */

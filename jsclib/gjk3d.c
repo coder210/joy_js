@@ -1,4 +1,4 @@
-#include "../joy.h"
+#include <joy/joy.h>
 #include "jsclib.h"
 
 #define PTR(n)  duk_get_pointer(ctx, n)

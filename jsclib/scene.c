@@ -1,4 +1,4 @@
-#include "../joy.h"
+#include <joy/joy.h>
 #include "jsclib.h"
 
 /* JS 绑定简化版：暴露核心 API 但不支持 C 回调（Duktape 对函数引用的限制）

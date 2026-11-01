@@ -1,5 +1,5 @@
 #include "jsclib.h"
-#include "../jmath.h"
+#include <joy/jmath.h>
 
 static duk_ret_t jv3_new(duk_context* ctx) { vec3_t* v=(vec3_t*)malloc(sizeof(vec3_t)); v->x=(ft_t)duk_to_number(ctx,0); v->y=(ft_t)duk_to_number(ctx,1); v->z=(ft_t)duk_to_number(ctx,2); duk_push_pointer(ctx,v); return 1; }
 static duk_ret_t jv3_destroy(duk_context* ctx) { free(duk_get_pointer(ctx,0)); return 0; }

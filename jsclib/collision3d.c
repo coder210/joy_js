@@ -1,4 +1,4 @@
-#include "../joy.h"
+#include <joy/joy.h>
 #include "jsclib.h"
 
 static vec3f_t read_vec3f(duk_context* ctx, int idx) { vec3f_t v; duk_get_prop_string(ctx,idx,"x"); v.x=(fp_t)duk_to_number(ctx,-1); duk_pop(ctx); duk_get_prop_string(ctx,idx,"y"); v.y=(fp_t)duk_to_number(ctx,-1); duk_pop(ctx); duk_get_prop_string(ctx,idx,"z"); v.z=(fp_t)duk_to_number(ctx,-1); duk_pop(ctx); return v; }

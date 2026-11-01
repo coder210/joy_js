@@ -1,5 +1,5 @@
 #include "jsclib.h"
-#include "../jmath.h"
+#include <joy/jmath.h>
 
 static duk_ret_t jv2f_new(duk_context* ctx) { vec2f_t* v = (vec2f_t*)malloc(sizeof(vec2f_t)); v->x = (fp_t)duk_to_number(ctx,0); v->y = (fp_t)duk_to_number(ctx,1); duk_push_pointer(ctx,v); return 1; }
 static duk_ret_t jv2f_destroy(duk_context* ctx) { free(duk_get_pointer(ctx,0)); return 0; }
